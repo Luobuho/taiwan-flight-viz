@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "https://bighornedowl.github.io/taiwan-flight-viz/static/css/main.4504bcfa.css",
-    "main.js": "https://bighornedowl.github.io/taiwan-flight-viz/static/js/main.b2cc7f12.js",
-    "index.html": "https://bighornedowl.github.io/taiwan-flight-viz/index.html",
-    "main.4504bcfa.css.map": "https://bighornedowl.github.io/taiwan-flight-viz/static/css/main.4504bcfa.css.map",
-    "main.b2cc7f12.js.map": "https://bighornedowl.github.io/taiwan-flight-viz/static/js/main.b2cc7f12.js.map"
+    "main.css": "https://luobuho.github.io/taiwan-flight-viz/static/css/main.4504bcfa.css",
+    "main.js": "https://luobuho.github.io/taiwan-flight-viz/static/js/main.57cab6b4.js",
+    "index.html": "https://luobuho.github.io/taiwan-flight-viz/index.html",
+    "main.4504bcfa.css.map": "https://luobuho.github.io/taiwan-flight-viz/static/css/main.4504bcfa.css.map",
+    "main.57cab6b4.js.map": "https://luobuho.github.io/taiwan-flight-viz/static/js/main.57cab6b4.js.map"
   },
   "entrypoints": [
     "static/css/main.4504bcfa.css",
-    "static/js/main.b2cc7f12.js"
+    "static/js/main.57cab6b4.js"
   ]
 }
