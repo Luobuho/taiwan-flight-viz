@@ -1,0 +1,586 @@
+/* 新增的顯示模式按鈕樣式 */
+.display-mode-buttons {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.display-mode-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+  transition: all 0.2s;
+}
+
+.display-mode-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.display-mode-button.active {
+  background: rgba(59, 130, 246, 0.6);
+  font-weight: bold;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.display-mode-icon {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.display-mode-label {
+  font-size: 12px;
+}
+
+/* 通用面板樣式 - 確保所有面板統一 */
+.panel {
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.panel h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.panel-toggle {
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.panel-toggle.collapsed {
+  transform: rotate(-90deg);
+}
+
+.panel-content {
+  max-height: 1000px;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+  overflow: hidden;
+  margin-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 12px;
+}
+
+.panel-content.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* 面板位置 - 固定定位，確保不重疊 */
+.controls-panel {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 360px;
+  max-height: 80vh;
+}
+
+.top-routes-panel {
+  position: absolute;
+  left: 20px;
+  width: 360px;
+  max-height: calc(100vh - 140px);
+  margin-top: calc(var(--controls-panel-height, 0px) + var(--legend-height, 0px) + 30px);
+}
+
+.stats-section {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 280px;
+}
+
+.new-routes-panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 240px;
+  max-height: calc(100vh - 40px);
+}
+
+.route-chart {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 700px); /* 確保不會與兩側面板重疊 */
+  max-width: 1000px;
+  height: 240px;
+  z-index: 15;
+}
+
+.usage-tips {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  max-width: 260px;
+  font-size: 12px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+/* 控制按鈕和表單 */
+.control-group {
+  margin-bottom: 16px;
+}
+
+.control-group:last-child {
+  margin-bottom: 0;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+}
+
+.control-button {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+  transition: all 0.2s;
+}
+
+.control-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.control-button.active {
+  background: rgba(59, 130, 246, 0.6);
+  font-weight: bold;
+}
+
+.select-control {
+  width: 100%;
+  padding: 8px;
+  background: rgba(30, 30, 30, 0.9);
+  color: white;
+  border: 1px solid rgba(100, 100, 100, 0.5);
+  border-radius: 4px;
+  appearance: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.select-control option {
+  background-color: #222;
+  color: white;
+  padding: 8px;
+}
+
+/* 時間軸播放按鈕 */
+.timeline-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.play-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.play-button:hover {
+  opacity: 0.8;
+}
+
+.play-button:active {
+  opacity: 0.6;
+}
+
+.timeline-slider {
+  flex: 1;
+}
+
+/* 統計數據項目 */
+.stat-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.stat-value {
+  font-weight: bold;
+}
+
+/* 航線圖表 */
+.route-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.route-chart-title {
+  font-size: 16px;
+  color: white;
+  margin: 0;
+  white-space: nowrap; /* 防止文字被拉寬 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.route-chart text {
+  white-space: nowrap !important; /* 強制不換行 */
+  text-rendering: optimizeLegibility; /* 優化文字渲染 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* 使用系統字體 */
+  font-kerning: normal; /* 正常字距 */
+  letter-spacing: normal; /* 正常間距 */
+}
+
+.route-chart-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.route-chart-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.simple-chart {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+/* 圖例 */
+.legend {
+  position: relative;
+  width: 100%;
+}
+
+.legend-gradient-improved {
+  height: 20px;
+  width: 100%;
+  background: linear-gradient(90deg, 
+    rgb(59, 130, 246) 0%, 
+    rgb(0, 200, 0) 33%, 
+    rgb(255, 255, 0) 66%, 
+    rgb(255, 0, 0) 100%);
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+
+.legend-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+.legend-color-description {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* 路線變化面板 */
+.time-period {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 12px;
+}
+
+.route-change-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+
+.route-change-section {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.route-change-section:last-child {
+  margin-bottom: 0;
+}
+
+.route-change-section h4 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.route-list-container {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
+
+.route-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  max-height: calc(100% - 10px);
+}
+
+.route-list li {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+}
+
+.route-list li:last-child {
+  border-bottom: none;
+}
+
+.route-icon {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.route-name {
+  flex: 1;
+}
+
+.route-passengers {
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.new-route .route-passengers {
+  color: rgb(34, 197, 94);
+}
+
+.discontinued-route .route-passengers {
+  color: rgb(239, 68, 68);
+}
+
+/* 前五航線表格 */
+.top-routes-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.top-routes-table th,
+.top-routes-table td {
+  padding: 6px 4px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-routes-table th {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.rank-column {
+  width: 30px;
+  text-align: center;
+}
+
+.passengers-column {
+  width: 40px;
+  text-align: right;
+}
+
+.change-column {
+  width: 90px;
+}
+
+.rank-icon {
+  margin-right: 4px;
+}
+
+.rank-up {
+  color: rgb(34, 197, 94);
+}
+
+.rank-down {
+  color: rgb(239, 68, 68);
+}
+
+.rank-same {
+  color: rgb(156, 163, 175);
+}
+
+.rank-new {
+  color: rgb(59, 130, 246);
+}
+
+/* 使用提示 */
+.usage-tips div {
+  margin-bottom: 4px;
+}
+
+.usage-tips div:last-child {
+  margin-bottom: 0;
+}
+
+/* 響應式設計 */
+@media (max-width: 1200px) {
+  .route-chart {
+    width: calc(100% - 640px);
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .route-chart {
+    width: calc(100% - 360px);
+    left: 340px;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .controls-panel,
+  .new-routes-panel,
+  .top-routes-panel,
+  .stats-section,
+  .usage-tips {
+    width: calc(100% - 40px);
+    max-width: none;
+    left: 20px;
+    right: 20px;
+    transform: none;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .route-chart {
+    width: calc(100% - 40px);
+    max-width: none;
+    left: 20px;
+    transform: none;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+/* WebKit 瀏覽器 (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* 調整寬度 */
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 30, 30, 0.9); /* 背景變深 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.7); /* 滑塊顏色 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(130, 130, 130, 0.8); /* 滑鼠懸停時變亮 */
+}
+
+/* Firefox */
+* {
+  scrollbar-color: rgba(100, 100, 100, 0.7) rgba(30, 30, 30, 0.9);
+  scrollbar-width: thin;
+}
+
+/* Microsoft Edge (舊版 IE 適配) */
+body {
+  scrollbar-face-color: rgba(100, 100, 100, 0.7);
+  scrollbar-track-color: rgba(30, 30, 30, 0.9);
+}
+
