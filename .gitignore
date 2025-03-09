@@ -1,0 +1,41 @@
+# 依赖
+/node_modules
+
+# 生产构建
+/build
+
+# 环境变量文件 (包含 Mapbox Token)
+.env
+.env.local
+.env.development
+.env.production
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 编辑器配置
+.vscode
+.idea
+*.swp
+*.swo
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# Docker (如果不需要上传docker配置)
+docker-compose.yml
+Dockerfile
+
+# 仅开发使用的脚本
+dev-setup.sh
+start-app.sh
+cmd.sh
+
+package-lock.json
+
