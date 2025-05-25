@@ -21,39 +21,6 @@
 - D3.js (用於比例尺)
 - Docker
 
-## 使用方法
-
-### 使用 Docker 啟動（推薦）
-
-如果你已經安裝了 Docker 和 Docker Compose，可以使用以下命令啟動應用：
-
-```bash
-# 構建並啟動 Docker 容器
-docker-compose up -d
-
-# 查看容器日誌
-docker-compose logs -f
-
-# 停止容器
-docker-compose down
-```
-
-應用將運行在 http://localhost:8080
-
-### 本地開發
-
-如果你想在本地開發環境中運行此應用：
-
-```bash
-# 安裝依賴
-npm install
-
-# 啟動開發服務器
-npm start
-```
-
-應用將運行在 http://localhost:3000
-
 ## 數據格式
 
 應用使用 GeoPackage 文件來存儲航線數據。數據文件應包含以下欄位：
