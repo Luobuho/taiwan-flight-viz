@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "https://luobuho.github.io/taiwan-flight-viz/static/css/main.4504bcfa.css",
-    "main.js": "https://luobuho.github.io/taiwan-flight-viz/static/js/main.57cab6b4.js",
+    "main.css": "https://luobuho.github.io/taiwan-flight-viz/static/css/main.6d5a2d85.css",
+    "main.js": "https://luobuho.github.io/taiwan-flight-viz/static/js/main.66054002.js",
     "index.html": "https://luobuho.github.io/taiwan-flight-viz/index.html",
-    "main.4504bcfa.css.map": "https://luobuho.github.io/taiwan-flight-viz/static/css/main.4504bcfa.css.map",
-    "main.57cab6b4.js.map": "https://luobuho.github.io/taiwan-flight-viz/static/js/main.57cab6b4.js.map"
+    "main.6d5a2d85.css.map": "https://luobuho.github.io/taiwan-flight-viz/static/css/main.6d5a2d85.css.map",
+    "main.66054002.js.map": "https://luobuho.github.io/taiwan-flight-viz/static/js/main.66054002.js.map"
   },
   "entrypoints": [
-    "static/css/main.4504bcfa.css",
-    "static/js/main.57cab6b4.js"
+    "static/css/main.6d5a2d85.css",
+    "static/js/main.66054002.js"
   ]
 }
